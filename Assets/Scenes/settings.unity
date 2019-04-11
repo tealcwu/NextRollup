@@ -341,10 +341,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -461,8 +461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -91.924736, y: -30.674026}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -99.275, y: -42.2}
+  m_SizeDelta: {x: 237.7, y: 68.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630754315
 MonoBehaviour:
@@ -485,11 +485,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 644504224}
   - component: {fileID: 644504225}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: SfxToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,7 +528,7 @@ RectTransform:
   m_GameObject: {fileID: 644504223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1523585700}
   m_Father: {fileID: 1916250247}
@@ -536,8 +536,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.075264, y: 31.999985}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: -11.863, y: 29.418}
+  m_SizeDelta: {x: 30.758, y: 19.612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644504225
 MonoBehaviour:
@@ -616,8 +616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87.924736, y: -18.674011}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -96.8, y: -43.474014}
+  m_SizeDelta: {x: 252.4, y: 69.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680022904
 MonoBehaviour:
@@ -640,11 +640,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 1045586246}
   - component: {fileID: 1045586247}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: BgMusicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -969,7 +969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.700012, y: -18.674011}
+  m_AnchoredPosition: {x: 153.99997, y: -43.474014}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1045586247
@@ -1056,8 +1056,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31859714, y: 0.74767756}
   m_AnchorMax: {x: 0.31859714, y: 0.74767756}
-  m_AnchoredPosition: {x: 96.1, y: -170}
-  m_SizeDelta: {x: 485.3, y: 150.4}
+  m_AnchoredPosition: {x: 144, y: -281}
+  m_SizeDelta: {x: 577.7, y: 181.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1055133158
 MonoBehaviour:
@@ -1187,8 +1187,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: 27}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -91.925, y: 28.837}
+  m_SizeDelta: {x: 252.4, y: 57.674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1340176433
 MonoBehaviour:
@@ -1211,11 +1211,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 1349083601}
   - component: {fileID: 1349083602}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: SfxSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1264,7 +1264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 46.7, y: 39}
+  m_AnchoredPosition: {x: 154, y: 46}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1349083602
@@ -1325,7 +1325,7 @@ GameObject:
   - component: {fileID: 1362143020}
   - component: {fileID: 1362143021}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: BgMusicToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1339,7 +1339,7 @@ RectTransform:
   m_GameObject: {fileID: 1362143019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 808033764}
   m_Father: {fileID: 1916250247}
@@ -1347,8 +1347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.075264, y: -30.674026}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 99.8, y: -34}
+  m_SizeDelta: {x: 21.2, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362143021
 MonoBehaviour:
@@ -1427,8 +1427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -86, y: 39}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -96.8, y: 33.836998}
+  m_SizeDelta: {x: 252.4, y: 67.674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441176415
 MonoBehaviour:
@@ -1451,11 +1451,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1572,7 +1572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -10}
+  m_AnchoredPosition: {x: 52, y: -10}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523585701
@@ -1678,8 +1678,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114.100006, y: -35.100006}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 114.100006, y: -56.3}
+  m_SizeDelta: {x: 160, y: 72.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1697442541
 MonoBehaviour:
@@ -1979,8 +1979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31859714, y: 0.74767756}
   m_AnchorMax: {x: 0.31859714, y: 0.74767756}
-  m_AnchoredPosition: {x: 96.1, y: 23.7}
-  m_SizeDelta: {x: 485.3, y: 145.2}
+  m_AnchoredPosition: {x: 144.00002, y: -76.25}
+  m_SizeDelta: {x: 577.7, y: 152.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916250248
 MonoBehaviour:
