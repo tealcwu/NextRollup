@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameMusicPlayer : MonoBehaviour {
 
     private AudioSource _audioSource;
-
     private static GameMusicPlayer instance = null;
     
     public static GameMusicPlayer Instance
@@ -38,5 +37,10 @@ public class GameMusicPlayer : MonoBehaviour {
     public void StopMusic()
     {
         _audioSource.Stop();
+    }
+
+    public void AdjustVolume(float volume)
+    {
+        _audioSource.volume = volume;
     }
 }

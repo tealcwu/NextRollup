@@ -12,11 +12,11 @@ public class GameControll : MonoBehaviour
     public Text RescueText;
     public int Energy = 100;
     private int rescues = 0;
-    public AudioSource friendAudio;
+    //public AudioSource friendAudio;
     public AudioSource energyAudio;
     public AudioSource enemyAudio;
     public Canvas WinCanvas;
-    public Text TimerText; 
+    public Text TimerText;
 
     public float TimeCount = 10;
 
@@ -81,8 +81,8 @@ public class GameControll : MonoBehaviour
 
     void GenerateCollidersAcrossScreen()
     {
-        Vector2 lDCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0f, Camera.main.nearClipPlane));//camera.ViewportToWorldPoint(new Vector3(0, 0f, camera.nearClipPlane));
-        Vector2 rUCorner = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));//camera.ViewportToWorldPoint(new Vector3(1f, 1f, camera.nearClipPlane));
+        Vector2 lDCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0f, Camera.main.nearClipPlane));
+        Vector2 rUCorner = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
         Vector2[] colliderpoints;
 
         EdgeCollider2D upperEdge = new GameObject("upperEdge").AddComponent<EdgeCollider2D>();
@@ -120,7 +120,10 @@ public class GameControll : MonoBehaviour
             rescues++;
             SetRescue();
 
-            friendAudio.Play();
+            // friendAudio.Play();
+            AudioSource faudio = collision.gameObject.GetComponent<AudioSource>();
+            faudio.Play();
+            
         }
 
         // if it's enemy
