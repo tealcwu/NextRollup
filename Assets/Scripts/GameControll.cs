@@ -15,9 +15,14 @@ public class GameControll : MonoBehaviour
     public AudioSource friendAudio;
     public AudioSource energyAudio;
     public AudioSource enemyAudio;
-    public Canvas WinCanvas; 
+    public Canvas WinCanvas;
+    public Text TimerText; 
+
+    public float TimeCount = 10;
 
     private float deltaX, deltaY;
+    private bool isWin;
+    private bool isFailed;
 
     //public void LoadSettings()
     //{
@@ -58,6 +63,19 @@ public class GameControll : MonoBehaviour
                     rb2d.MovePosition(new Vector2(touchPos.x - deltaX, touchPos.y - deltaY));
                     break;
             }
+        }
+
+        // update timer
+        if(TimeCount>0 && !isWin && !isFailed)
+        {
+            TimeCount -= Time.deltaTime;
+            if (TimeCount < 0)
+            {
+                TimeCount = 0;
+                GameOver();
+            }
+
+            TimerText.text = TimeCount.ToString();
         }
     }
 
@@ -128,13 +146,18 @@ public class GameControll : MonoBehaviour
     private void restart()
     {
         // reload game scene
-        SceneManager.LoadScene("game");
+        //SceneManager.LoadScene("game");
+
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        
     }
 
     public void GameOver()
     {
         // show menu canvas
         MenuCanvas.SetActive(true);
+        isFailed = true;
     }
 
     private void hideMenu()
@@ -189,7 +212,7 @@ public class GameControll : MonoBehaviour
         if(rescues>=5)
         {
             // you win!
-            
+            isWin = true;
             WinCanvas.gameObject.SetActive(true);
         }
     }
