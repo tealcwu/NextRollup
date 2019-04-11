@@ -12,7 +12,7 @@ public class GameControll : MonoBehaviour
     public Text RescueText;
     public int Energy = 100;
     private int rescues = 0;
-    //public AudioSource friendAudio;
+    private AudioSource friendAudio;
     public AudioSource energyAudio;
     public AudioSource enemyAudio;
     public Canvas WinCanvas;
@@ -39,6 +39,8 @@ public class GameControll : MonoBehaviour
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         GenerateCollidersAcrossScreen();
+
+        friendAudio = GameObject.Find("FriendAudio").GetComponent<AudioSource>();
         //SetEnergy();
     }
 
@@ -115,15 +117,14 @@ public class GameControll : MonoBehaviour
     {
         if (collision.CompareTag("friend"))
         {
+            friendAudio.Play();
+            //AudioSource faudio = collision.gameObject.GetComponent<AudioSource>();
+            //faudio.Play();
+
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
             rescues++;
             SetRescue();
-
-            // friendAudio.Play();
-            AudioSource faudio = collision.gameObject.GetComponent<AudioSource>();
-            faudio.Play();
-            
         }
 
         // if it's enemy
@@ -149,11 +150,8 @@ public class GameControll : MonoBehaviour
     private void restart()
     {
         // reload game scene
-        //SceneManager.LoadScene("game");
-
         int scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
-        
     }
 
     public void GameOver()
