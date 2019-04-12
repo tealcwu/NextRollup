@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Levels>
+  <Level id="1" friends="3" enemies ="5" energies="3"/>
+  <Level id="2" friends="4" enemies ="6" energies="4"/>
+  <Level id="3" friends="5" enemies ="7" energies="5"/>
+  <Level id="4" friends="6" enemies ="8" energies="6"/>
+  <Level id="5" friends="7" enemies ="9" energies="7"/>
+  <Level id="6" friends="8" enemies ="10" energies="8"/>
+  <Level id="7" friends="9" enemies ="11" energies="9"/>
+  <Level id="8" friends="10" enemies ="12" energies="10"/>
+  <Level id="9" friends="11" enemies ="13" energies="11"/>
+  <Level id="10" friends="12" enemies ="14" energies="12"/>
+</Levels>

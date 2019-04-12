@@ -89,15 +89,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2bfeb443faf124796171545bbbc05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  MenuCanvas: {fileID: 0}
-  EnergyText: {fileID: 0}
-  RescueText: {fileID: 0}
+  FailCanvas: {fileID: 1430507537467370, guid: 9b7bf7fa4c3a65943be856645ab258c0, type: 2}
+  WinCanvas: {fileID: 1242177973135630, guid: 6a01c91b53b0e8a4fbb9437e9b5c1ff2, type: 2}
+  EnergyText: {fileID: 114939099139726940, guid: 5949aff41038c0b48aa2b617941e1216,
+    type: 2}
+  RescueText: {fileID: 114145805133073916, guid: 5949aff41038c0b48aa2b617941e1216,
+    type: 2}
+  LevelText: {fileID: 114039863832174750, guid: 5949aff41038c0b48aa2b617941e1216,
+    type: 2}
+  TimerText: {fileID: 114748087580858422, guid: 5949aff41038c0b48aa2b617941e1216,
+    type: 2}
   Energy: 100
-  friendAudio: {fileID: 0}
-  energyAudio: {fileID: 0}
-  enemyAudio: {fileID: 0}
-  WinCanvas: {fileID: 0}
+  TimeCount: 10
 --- !u!212 &212888222376961484
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,49 +7,85 @@ using UnityEngine.SceneManagement;
 public class GameControll : MonoBehaviour
 {
     Rigidbody2D rb2d;
-    public GameObject MenuCanvas;
+    public GameObject FailCanvas;
+    public GameObject WinCanvas;
     public Text EnergyText;
     public Text RescueText;
-    public int Energy = 100;
+    public Text LevelText; // to be used later
+    public Text TimerText;
+    public int Friends;
+
+    private int energy = 0;
     private int rescues = 0;
     private AudioSource friendAudio;
     private AudioSource energyAudio;
     private AudioSource enemyAudio;
-    public Canvas WinCanvas;
-    public Text TimerText;
 
     public float TimeCount = 10;
 
-    Vector3 offset;
-    Vector3 mousePosition;
+    private Vector3 offset;
+    private Vector3 mousePosition;
     private float deltaX, deltaY;
     private bool isWin;
     private bool isFailed;
+    private bool isModal = false;
 
-    //public void LoadSettings()
-    //{
-    //    EnergyText.text = PlayerPrefs.GetString("Energy");
-    //}
+    public void LoadSettings()
+    {
+        energy = PlayerPrefs.GetInt("Energy");
+        SetEnergy();
+    }
 
-    //public void SaveSettings()
-    //{
-    //    PlayerPrefs.SetString("Energy", EnergyText.text);
-    //}
+    public void SaveSettings()
+    {
+        PlayerPrefs.SetInt("Energy", energy);
+    }
+
+    public void InitSettings()
+    {
+        energy = 0;
+        SetEnergy();
+        PlayerPrefs.SetInt("Energy", energy);
+    }
 
     // Use this for initialization
     void Start()
     {
+        isModal = false;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         GenerateCollidersAcrossScreen();
 
         friendAudio = GameObject.Find("FriendAudio").GetComponent<AudioSource>();
         energyAudio = GameObject.Find("EnergyAudio").GetComponent<AudioSource>();
         enemyAudio = GameObject.Find("EnemyAudio").GetComponent<AudioSource>();
-        //SetEnergy();
+        ////SetEnergy();
+
+        //FailCanvas = GameObject.Find("FailCanvas");
+        //WinCanvas = GameObject.Find("WinCanvas");
+        //EnergyText = GameObject.Find("EnergyText").GetComponent<Text>();
+        //RescueText = GameObject.Find("RescueText").GetComponent<Text>();
+        //TimerText = GameObject.Find("TimerText").GetComponent<Text>();
+        ////LevelText = GameObject.Find("LevelText").GetComponent<Text>();
+
+        //FailCanvas.SetActive(false);
+        //WinCanvas.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "game")
+        {
+            InitSettings();
+        }
+        else
+        {
+            LoadSettings();
+        }
     }
 
     void Update()
     {
+        if(isModal)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             // get offset
@@ -87,7 +123,7 @@ public class GameControll : MonoBehaviour
         }
 
         // update timer
-        if(TimeCount>0 && !isWin && !isFailed)
+        if (TimeCount > 0 && !isWin && !isFailed)
         {
             TimeCount -= Time.deltaTime;
             if (TimeCount < 0)
@@ -159,7 +195,7 @@ public class GameControll : MonoBehaviour
         if (collision.CompareTag("energy"))
         {
             Destroy(collision.gameObject);
-            Energy += 10;
+            energy += 10;
             SetEnergy();
             energyAudio.Play();
         }
@@ -169,21 +205,26 @@ public class GameControll : MonoBehaviour
     private void restart()
     {
         // reload game scene
+        isModal = false;
         int scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
+
+        InitSettings();
     }
 
     public void GameOver()
     {
         // show menu canvas
-        MenuCanvas.SetActive(true);
+        FailCanvas.SetActive(true);
         isFailed = true;
+        InitSettings();
+        isModal = true;
     }
 
     private void hideMenu()
     {
         // hide menu canvas
-        MenuCanvas.SetActive(false);
+        FailCanvas.SetActive(false);
     }
 
     public void Replay()
@@ -209,7 +250,7 @@ public class GameControll : MonoBehaviour
     public void ToNextLevel(string level)
     {
         // hide
-        WinCanvas.gameObject.SetActive(false);
+        WinCanvas.SetActive(false);
 
         SceneManager.LoadScene(level);
     }
@@ -220,19 +261,20 @@ public class GameControll : MonoBehaviour
 
     private void SetEnergy()
     {
-        EnergyText.text = "Energy: " + Energy;
-        // SaveSettings();
+        EnergyText.text = "Energy: " + energy;
+        SaveSettings();
     }
 
     private void SetRescue()
     {
-        RescueText.text = "Rescues: " + rescues;
+        RescueText.text = string.Format("Rescues: {0}/{1}", rescues, Friends);
 
-        if(rescues>=5)
+        if (rescues >= Friends)
         {
             // you win!
             isWin = true;
-            WinCanvas.gameObject.SetActive(true);
+            isModal = true;
+            WinCanvas.SetActive(true);
         }
     }
 

@@ -12,8 +12,35 @@ EditorBuildSettings:
     path: Assets/Scenes/game.unity
     guid: fd7716247da41bd4f837ac9dcf141422
   - enabled: 1
-    path: Assets/Scenes/score.unity
-    guid: cbe5dc49efcb5a941a3c858e09faa16a
+    path: Assets/Scenes/level2.unity
+    guid: db1dbe796c7f999438345b1d1a8bd86d
+  - enabled: 1
+    path: Assets/Scenes/level3.unity
+    guid: c786d7ef81ee0ac44b50e71167cb3c68
+  - enabled: 1
+    path: Assets/Scenes/level4.unity
+    guid: 23a1b92401468a74e938811119940f04
+  - enabled: 1
+    path: Assets/Scenes/level5.unity
+    guid: 851addc22b851644e83282a7643e01af
+  - enabled: 1
+    path: Assets/Scenes/level6.unity
+    guid: 9014ff27fc23d9745aa130a81eb3b979
+  - enabled: 1
+    path: Assets/Scenes/level7.unity
+    guid: 7098bc6e8ef9af2478d9cc4bff82c70d
+  - enabled: 1
+    path: Assets/Scenes/level8.unity
+    guid: 3b39d990953bd4b4dafa35e0f4f4196e
+  - enabled: 1
+    path: Assets/Scenes/level9.unity
+    guid: bd8b1ea440bdbb64eb8bdfcd3152b124
+  - enabled: 1
+    path: Assets/Scenes/level10.unity
+    guid: 3f3f92eb362a40143b0245912a36a007
+  - enabled: 1
+    path: Assets/Scenes/winner.unity
+    guid: d2e7c0d7bfe4b9d47bf401847ba2244d
   - enabled: 1
     path: Assets/Scenes/settings.unity
     guid: 386eadc53962b4645a1ad45f2a1998b0
@@ -21,9 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/store.unity
     guid: 2e694c664f2e9ad4dafdfcc2e6b37da8
   - enabled: 1
-    path: Assets/Scenes/level2.unity
-    guid: db1dbe796c7f999438345b1d1a8bd86d
-  - enabled: 1
-    path: Assets/Scenes/level3.unity
+    path: Assets/Scenes/score.unity
+    guid: cbe5dc49efcb5a941a3c858e09faa16a
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/016aea874bfc1d14a8861de2f05e46db
     guid: 016aea874bfc1d14a8861de2f05e46db
   m_configObjects: {}

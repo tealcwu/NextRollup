@@ -71,4 +71,13 @@ public class SettingsManager : MonoBehaviour
     {
         gameMusicPlayerClass.AdjustVolume(BgSlider.value);
     }
+
+
+    #region item settings
+
+
+
+
+
+    #endregion
 }
