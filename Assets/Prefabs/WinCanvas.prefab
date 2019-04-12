@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 222853364492987042}
   - component: {fileID: 114575691185398476}
   - component: {fileID: 114746268931192052}
-  - component: {fileID: 114595552312590440}
   m_Layer: 5
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -285,17 +284,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114595552312590440
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1730162463270934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41cb5c9e2f5248140b63d732e4c2577f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114735996321593240
 MonoBehaviour:
   m_ObjectHideFlags: 1

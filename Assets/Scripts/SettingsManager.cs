@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
+    // public variables
+    public Toggle SfxToggle;
+    public Toggle BgToggle;
+    public Slider SfxSlider;
+    public Slider BgSlider;
 
+    // private variables
     private GameObject gameMusicPlayer;
     private GameMusicPlayer gameMusicPlayerClass;
     private AudioSource friendAudio;
     private AudioSource energyAudio;
     private AudioSource enemyAudio;
-
-    public Toggle SfxToggle;
-    public Toggle BgToggle;
-    public Slider SfxSlider;
-    public Slider BgSlider;
 
     // Use this for initialization
     void Start()
@@ -71,13 +72,4 @@ public class SettingsManager : MonoBehaviour
     {
         gameMusicPlayerClass.AdjustVolume(BgSlider.value);
     }
-
-
-    #region item settings
-
-
-
-
-
-    #endregion
 }

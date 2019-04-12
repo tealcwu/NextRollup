@@ -15,9 +15,9 @@ public class ExitNow : MonoBehaviour
 
     private void exitDetection()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(countDown == 0)
+            if (countDown == 0)
             {
                 countDown = Time.time;
                 isTiming = true;
@@ -28,9 +28,9 @@ public class ExitNow : MonoBehaviour
             }
         }
 
-        if(isTiming)
+        if (isTiming)
         {
-            if((Time.time - countDown) > 2.0)
+            if ((Time.time - countDown) > 2.0)
             {
                 countDown = 0;
                 isTiming = false;

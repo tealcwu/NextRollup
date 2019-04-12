@@ -8,7 +8,6 @@ public enum ButtonTypes
     SFX, BGM, PAUSE
 }
 
-
 public class AudioControl : MonoBehaviour {
 
     public ButtonTypes ButtonType;

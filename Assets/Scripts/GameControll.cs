@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameControll : MonoBehaviour
 {
-    Rigidbody2D rb2d;
+    // public variables
     public GameObject FailCanvas;
     public GameObject WinCanvas;
     public Text EnergyText;
@@ -14,15 +14,15 @@ public class GameControll : MonoBehaviour
     public Text LevelText; // to be used later
     public Text TimerText;
     public int Friends;
+    public float TimeCount = 10;
 
+    // private variables
+    private Rigidbody2D rb2d;
     private int energy = 0;
     private int rescues = 0;
     private AudioSource friendAudio;
     private AudioSource energyAudio;
     private AudioSource enemyAudio;
-
-    public float TimeCount = 10;
-
     private Vector3 offset;
     private Vector3 mousePosition;
     private float deltaX, deltaY;
@@ -58,17 +58,7 @@ public class GameControll : MonoBehaviour
         friendAudio = GameObject.Find("FriendAudio").GetComponent<AudioSource>();
         energyAudio = GameObject.Find("EnergyAudio").GetComponent<AudioSource>();
         enemyAudio = GameObject.Find("EnemyAudio").GetComponent<AudioSource>();
-        ////SetEnergy();
 
-        //FailCanvas = GameObject.Find("FailCanvas");
-        //WinCanvas = GameObject.Find("WinCanvas");
-        //EnergyText = GameObject.Find("EnergyText").GetComponent<Text>();
-        //RescueText = GameObject.Find("RescueText").GetComponent<Text>();
-        //TimerText = GameObject.Find("TimerText").GetComponent<Text>();
-        ////LevelText = GameObject.Find("LevelText").GetComponent<Text>();
-
-        //FailCanvas.SetActive(false);
-        //WinCanvas.SetActive(false);
         if (SceneManager.GetActiveScene().name == "game")
         {
             InitSettings();
@@ -81,7 +71,7 @@ public class GameControll : MonoBehaviour
 
     void Update()
     {
-        if(isModal)
+        if (isModal)
         {
             return;
         }
@@ -95,8 +85,6 @@ public class GameControll : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            //Debug.Log("GetMouseButton triggered.");
-
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             gameObject.transform.position = new Vector3(mousePosition.x + offset.x, mousePosition.y + offset.y, 0);
         }
@@ -104,7 +92,6 @@ public class GameControll : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-
             Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
             switch (touch.phase)
@@ -136,6 +123,7 @@ public class GameControll : MonoBehaviour
         }
     }
 
+    // generate edge collider across screen
     void GenerateCollidersAcrossScreen()
     {
         Vector2 lDCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0f, Camera.main.nearClipPlane));
@@ -173,8 +161,6 @@ public class GameControll : MonoBehaviour
         if (collision.CompareTag("friend"))
         {
             friendAudio.Play();
-            //AudioSource faudio = collision.gameObject.GetComponent<AudioSource>();
-            //faudio.Play();
 
             collision.gameObject.SetActive(false);
             Destroy(collision.gameObject);
@@ -231,7 +217,6 @@ public class GameControll : MonoBehaviour
     {
         // restart
         restart();
-        // show 
     }
 
     public void ExitGame()
@@ -240,8 +225,9 @@ public class GameControll : MonoBehaviour
         SceneManager.LoadScene("main");
 
         // clear settings
-    }
+        InitSettings();
 
+    }
 
     #endregion
 
@@ -251,7 +237,6 @@ public class GameControll : MonoBehaviour
     {
         // hide
         WinCanvas.SetActive(false);
-
         SceneManager.LoadScene(level);
     }
 
@@ -277,6 +262,5 @@ public class GameControll : MonoBehaviour
             WinCanvas.SetActive(true);
         }
     }
-
     #endregion
 }

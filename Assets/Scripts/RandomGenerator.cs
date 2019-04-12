@@ -36,11 +36,6 @@ public class RandomGenerator : MonoBehaviour {
         }
     }
 	
-	// Update is called once per frame
-	void Update () {
-
-    }
-
     // generate random objects
     void RandomSpawn(GameObject circle, int count)
     {
