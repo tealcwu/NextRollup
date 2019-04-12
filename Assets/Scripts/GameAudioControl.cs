@@ -10,9 +10,4 @@ public class GameAudioControl : MonoBehaviour {
 	void Start () {
         friendAudio = GameObject.Find("FriendAudio").GetComponent<AudioSource>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

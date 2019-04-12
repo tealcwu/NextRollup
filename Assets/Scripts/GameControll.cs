@@ -13,13 +13,15 @@ public class GameControll : MonoBehaviour
     public int Energy = 100;
     private int rescues = 0;
     private AudioSource friendAudio;
-    public AudioSource energyAudio;
-    public AudioSource enemyAudio;
+    private AudioSource energyAudio;
+    private AudioSource enemyAudio;
     public Canvas WinCanvas;
     public Text TimerText;
 
     public float TimeCount = 10;
 
+    Vector3 offset;
+    Vector3 mousePosition;
     private float deltaX, deltaY;
     private bool isWin;
     private bool isFailed;
@@ -41,11 +43,28 @@ public class GameControll : MonoBehaviour
         GenerateCollidersAcrossScreen();
 
         friendAudio = GameObject.Find("FriendAudio").GetComponent<AudioSource>();
+        energyAudio = GameObject.Find("EnergyAudio").GetComponent<AudioSource>();
+        enemyAudio = GameObject.Find("EnemyAudio").GetComponent<AudioSource>();
         //SetEnergy();
     }
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            // get offset
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            offset = gameObject.transform.position - mousePosition;
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            //Debug.Log("GetMouseButton triggered.");
+
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            gameObject.transform.position = new Vector3(mousePosition.x + offset.x, mousePosition.y + offset.y, 0);
+        }
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -184,7 +203,6 @@ public class GameControll : MonoBehaviour
 
 
     #endregion
-
 
     #region Win
 
